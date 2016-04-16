@@ -15,7 +15,7 @@ def main():
 	# neg = data['probability']['neg']
 	# neutral = data['probability']['neutral']
 
-	print get_sent_tuples(parse_string(user_str))
+	print get_syllables(user_str)
 
 if __name__ == '__main__':
   main()
