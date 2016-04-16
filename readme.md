@@ -7,4 +7,4 @@
 #### Usage 
 - In your terminal, cd to the cloned repo
 - Run `python run.py`
-- Visit `localhost:6969s` to view the application in your browser
+- Visit `localhost:6969` to view the application in your browser
