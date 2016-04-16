@@ -15,6 +15,8 @@ def main():
 	# neg = data['probability']['neg']
 	# neutral = data['probability']['neutral']
 
+	getsyllables(user_str)
+
 if __name__ == '__main__':
   main()
 
