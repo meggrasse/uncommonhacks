@@ -22,14 +22,14 @@ def index():
 
 	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
 
-@app.route("/receive_sms", methods=['GET', 'POST'])
+@app.route("/recieve_sms", methods=['GET', 'POST'])
 def recieve_sms():
     """Saves sms messages"""
 
     resp = twilio.twiml.Response()
     resp.message("sending back")
-    return str(resp)
-    
+    return render_template('message.html', resp=resp)
+
 if __name__ == "__main__":
     app.run(debug=True)
  
