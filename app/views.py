@@ -22,12 +22,14 @@ def index():
 
 	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
 
-# @app.route("/receive_sms", methods=['GET', 'POST'])
-# def recieve_sms():
-#     """Saves sms messages"""
+@app.route("/receive_sms", methods=['GET', 'POST'])
+def recieve_sms():
+    """Saves sms messages"""
+    
+    resp = twilio.twiml.Response()
+    resp.message("sending back")
+    return str(resp)
  
-# 	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
-
 @app.errorhandler(500)
 def internal_error(error):
   return "500 Internal Error"
