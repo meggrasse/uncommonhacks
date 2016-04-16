@@ -11,6 +11,7 @@ assets.url = app.static_url_path
 scss = Bundle('scss/main.scss', filters='pyscss', output='css/all.css')
 assets.register('scss_all', scss)
 
+
 app.config.from_object('config')
 
 from app import views
