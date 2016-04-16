@@ -1,0 +1,89 @@
+// MVP //
+ // 1. paragraph sentiment
+ // 2. sentence sentiment
+ // 3. compare sentences, determine if the change in sentiment between sentences warrants a modulation
+ // 4. rhythm calculation
+          word_rhythm = 4 / syllable_count
+ // 4b. rest allocation 
+          rest_duration = 4-remainder(word_count/4)
+          example : the quick brown fox | jumps over z2 ||
+               therefore there would be 2 beats of rest         
+ // 5. phrasing
+          if period --> tonic+middle*middle_count+pre_dominant+dominant+tonic 
+            round(sentence_word_count) to the closest multiple of 4
+            
+          if comma  --> tonic+middle*word_count_before_comma+half_cadence_[sentiment]
+            round(word_count_before_comma) to the closest multiple of 4
+            
+// chords init // 
+   // C is tonic //
+   // chord = [bass root third fifth] //
+   I    = [Cceg]  //happy    /   tonic//
+   i    = [Cc_eg] //sad      /   tonic//
+   ii   = [Ddfa]  //neutral  /  middle//
+   ii6  = [Fdfa]  //neutral  /  middle//
+   iio  = [Ddf_a] //v sad    /  middle//
+   iii  = [Eegb]  //neutral  /  middle//
+   IV   = [Ffac]  //happy    /  ending//
+   iv   = [Ff_ac] //sad      /  ending//
+   V    = [Ggbd]  //happy    /  ending//
+   vi   = [Aace]  //neutral  /  middle//
+   viio  = [Bbdf] //v sad    /  middle//
+   
+   tonic_all = [I i]
+   tonic_happy = [I]
+   tonic_sad = [i]
+   
+   middle_all = [ii iio iii vi viio]
+   middle_neutral = [ii iii vi viio]
+   middle_vsad = [iio viio]
+   
+   pre_dominant_all = [IV iv ii6]
+   pre_dominant_happy = [IV]
+   pre_dominant_sad = [iv ii6]
+   
+   dominant = [V]
+   
+   //if comma//
+   half_cadence_happy = [IV V]
+   half_cadence_sad = [iv V]
+   deceptive_cadence = [iv V VI]
+   
+   //then, use tonic for final chord//
+   
+// chord progression templates for each sentence//
+   // I ... middle ... IV V I  //happy
+   // I ... middle ... IV V    //happy half
+   // i ... middle ... iv V i  //sad 
+   // i ... middle ... iv V    //sad half
+   // i ... middle ... iv V iv //deceptive
+   
+//progression
+      progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + dominant + tonic
+          if period
+              middle_count = word_count - 4
+              //use tonic_[sentiment]//
+   
+          if comma
+              middle_count_before_comma = word_count_before_comma - 3 
+              
+              //use half_cadence_[sentiment]//
+              OR 
+              //use deceptive_cadence//
+                     
+   
+// rhythm
+    word_rhythm = 4 / syllable_count
+    rest_duration = 4-remainder(word_count/4) 
+   
+//example ABC//
+   X: 1
+   T: title
+   C: composer
+   N: uncommon hax
+   M: 4/4
+   L: 1/4
+   K: C
+   
+   |: G2B B>AB | c2A A>ce | d>ed cAc | G2B B2D \
+   |  G2B B>AB | c2A A>ce | d>ed cEF | G4  z2 :|
