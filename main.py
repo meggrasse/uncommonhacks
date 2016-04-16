@@ -15,16 +15,10 @@ def main():
 	# neg = data['probability']['neg']
 	# neutral = data['probability']['neutral']
 
-	# get_syllables(user_str)
-
-	# Get tuples for individual sentences
-	# data = get_sent_tuples(parse_string(user_str))
-	# print data
-
 	data = get_sent_tuples(parse_string(user_str))
-	print data
+	chords = analyze_tuples(data)
+	print chords
 
-	# Get tuple for whole paragraph
 
 if __name__ == '__main__':
   main()
