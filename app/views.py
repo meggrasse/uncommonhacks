@@ -3,6 +3,7 @@ from  werkzeug.debug import get_current_traceback
 from app import app
 from sentiment import *
 from .forms import *
+import twilio.twiml
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -24,11 +25,9 @@ def index():
 
 @app.route("/recieve_sms", methods=['GET', 'POST'])
 def recieve_sms():
-    """Saves sms messages"""
-
     resp = twilio.twiml.Response()
     resp.message("sending back")
-    return render_template('message.html', resp=resp)
+    return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=True)

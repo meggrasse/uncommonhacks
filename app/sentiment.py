@@ -26,7 +26,7 @@ def get_sent_tuples(sentences):
 		sent_tuples.append(sent_tuple)
 	return sent_tuples
 
-def getsyllables(word):
+def get_syllables(word):
 	opener=urllib.FancyURLopener({})
 	url="http://www.syllablecount.com/syllables/"+str(word)
 	openerFile = opener.open(url)
