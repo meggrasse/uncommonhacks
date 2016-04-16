@@ -20,8 +20,12 @@ def index():
 		neg = ratings_data['probability']['neg']
 		neutral = ratings_data['probability']['neutral']
 
+	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
 
-
+@app.route("/receive_sms", methods=['GET', 'POST'])
+def recieve_sms():
+    """Saves sms messages"""
+ 
 	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
 
 @app.errorhandler(500)
@@ -30,4 +34,6 @@ def internal_error(error):
 
 @app.errorhandler(404)
 def not_found(error):
-	return "404 Error: Page not found", 404
+	return "404 Error: Page not", 404
+
+
