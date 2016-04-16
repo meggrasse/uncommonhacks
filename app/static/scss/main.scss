@@ -1,0 +1,103 @@
+$mainfont: 'Proxima Nova', 'Helvetica', Arial, sans-serif;
+$maincolor: #323232;
+
+@mixin font($type: $mainfont, $size: 1em, $weight: 400, $color: #000) {
+	font-family: $type;
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin button() {
+	@include font($mainfont, 1em, 700, #fff);
+	border: 3px #408fec solid;
+    background-color: #408fec;
+    border-radius: 4.6875rem;
+    padding: 8px 20px;
+    position: relative;
+    outline: none;
+
+    &:hover {
+    	background-color: darken(#408fec, 5%);
+    	border-color: darken(#408fec, 5%);
+    }	 
+}
+
+@mixin transition() {
+	-webkit-transition: ease-in-out 0.3s;
+	-moz-transition: ease-in-out 0.3s;
+	-o-transition: ease-in-out 0.3s;
+	transition: ease-in-out 0.3s;
+
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	background: #fafafa;
+	color: $maincolor;
+
+	nav {
+		padding: 20px;
+		border-bottom: 1px solid #ddd;
+		ul {
+			li {
+				display: inline-block;
+				a {
+					font-weight: 700;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+	.container {
+
+		h2 {
+			text-align: center;
+			@include font($mainfont, 1.5em, 700, $maincolor);
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		#textform {
+			text-align: center;
+			#textinput {
+				@include font($mainfont, 1em, 500, $maincolor);
+				padding: 10px;
+				height: 44px;
+				outline: none;
+				border: 1px solid #ccc;
+				width: 90%;
+				max-width: 400px;
+				margin-bottom: 10px;
+			}
+
+			input[type="submit"] {
+				@include button();
+			}
+		}
+
+		.results {
+			text-align: center;
+			padding: 20px;
+		}
+	}
+
+
+}

@@ -1,0 +1,3 @@
+Vmainfont: 'Proxima Nova', 'Helvetica', Arial, sans-serif; \u000a  a:hover {\u000a    text-decoration: none; }\u000a\u000a  ul {\u000a    padding: 0;\u000a    margin: 0; }\u000a\u000a    body {\u000a      background: #fafafa;\u000a      color: #323232; }\u000a      body nav {\u000a        padding: 20px;\u000a        border-bottom: 1px solid #ddd; }\u000a        body nav ul li {\u000a          display: inline-block; }\u000a          body nav ul li a {\u000a            font-weight: 700; }\u000a            body nav ul li a:hover {\u000a              text-decoration: none; }\u000a
+p1
+.

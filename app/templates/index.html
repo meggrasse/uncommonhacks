@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="container">
+		<h2>UncommonHacks</h2>
+		<form id="textform" action="" method="post" name="textform">
+			{{ form.hidden_tag() }}
+			{{ form.textinput }}
+			{% for error in form.textinput.errors %}
+	        	<span class="error-msg">[{{ error }}]</span>
+	        {% endfor %}
+	        <div class="option-container row">
+		    	<input id="submit" type="submit" value="Get Ratings">
+		    </div>
+	    </form>
+	    <div class='results'>
+	    	<ul>
+	    		<li>
+	    			<h4> Positive: </h4>
+	    			{{ pos }}
+	    		</li>
+	    		<li>
+	    			<h4> Negative: </h4>
+	    			{{ neg }}
+	    		</li>
+	    		<li>
+	    			<h4> Neutral: </h4>
+	    			{{ neutral }}
+	    		</li>
+	    	</ul>
+	    </div>
+	</div>
+{% endblock %}
