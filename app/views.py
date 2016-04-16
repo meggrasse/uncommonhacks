@@ -4,6 +4,13 @@ from app import app
 from sentiment import *
 from .forms import *
 import twilio.twiml
+from twilio.rest import TwilioRestClient
+from collections import deque
+
+ACCOUNT_SID = "AC01fe30b094e3251e3f48f0acb4853310"
+AUTH_TOKEN = "47c5f4501af1693a8ecfdcd887aa2632"
+
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -23,11 +30,15 @@ def index():
 
 	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
 
-@app.route("/recieve_sms", methods=['GET', 'POST'])
-def recieve_sms():
-    resp = twilio.twiml.Response()
-    resp.message("sending back")
-    return str(resp)
+@app.route("/message", methods=['GET', 'POST'])
+def message():
+	#body_mes = client.messages.Body
+	resp = twilio.twiml.Response()
+	resp.message("sending back")
+	messages = deque(client.messages.list())
+	last_text = messages.popleft().body
+	print last_text
+	return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=True)
