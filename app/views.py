@@ -25,10 +25,13 @@ def index():
 @app.route("/receive_sms", methods=['GET', 'POST'])
 def recieve_sms():
     """Saves sms messages"""
-    
+
     resp = twilio.twiml.Response()
     resp.message("sending back")
     return str(resp)
+    
+if __name__ == "__main__":
+    app.run(debug=True)
  
 @app.errorhandler(500)
 def internal_error(error):
