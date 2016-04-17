@@ -1,14 +1,16 @@
-from flask import render_template, flash, redirect, url_for, request, abort
+from flask import render_template, flash, redirect, url_for, request, abort, send_from_directory
 from  werkzeug.debug import get_current_traceback
 from app import app
 from sentiment import *
 from .forms import *
 from secret import *
 import twilio.twiml
+import requests
 from twilio.rest import TwilioRestClient
 from collections import deque
 
 client = TwilioRestClient(account_sid, auth_token)
+phone_number = ''
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -34,12 +36,24 @@ def message():
 	resp = twilio.twiml.Response()
 	resp.message("Thanks, expect a call soon!")
 	messages = deque(client.messages.list())
-	last_text = messages.popleft().body
+	last_message = messages.popleft()
+	last_text = last_message.body
+	phone_number = last_message.from_
+	f = open('phonenumber.txt', 'w')
+	f.write(phone_number)
 	list_of_tuples = get_sent_tuples(parse_string(str(last_text)))
-	print list_of_tuples
 	my_chords = analyze_tuples(list_of_tuples)
-	print my_chords
-	return str(resp)
+	return redirect("/makecall") 
+
+@app.route("/makecall", methods=['GET', 'POST'])
+def makecall():
+	f = open('phonenumber.txt', 'r')
+	phone_number = f.read()
+	print "whats up"
+	call = client.calls.create(url="http://twimlbin.com/23667f37ab8451dbb3223f51d2248f21",
+		to=phone_number,
+		from_="+16307556548")
+	return "working"
 
 if __name__ == "__main__":
     app.run(debug=True)
