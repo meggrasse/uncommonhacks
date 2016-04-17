@@ -7,7 +7,7 @@ import re #regex
 
 
 def parse_string(paragraph):
-	sentences = map(str.strip, paragraph.split("."))
+	sentences = map(str.strip, paragraph.split(" "))
 	for sentence in sentences:
 		if not len(sentence):
 			sentences.pop()
