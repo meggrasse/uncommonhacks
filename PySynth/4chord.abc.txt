@@ -1,0 +1,35 @@
+X: 1 
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| C A F G | C2 z2 |
+
+X: 2 
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| c a f b | c2 z2 |
+
+X: 3
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| e c a d | e2 z2 |
+
+X: 4
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| g e c f | g2 z2 |
