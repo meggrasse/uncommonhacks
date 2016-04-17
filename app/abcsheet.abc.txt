@@ -5,7 +5,7 @@ M: 1/4
 L: 1/4
 K: C
 Q: 1/4=120
-| c G D B D D F G c |
+| c D G D | G G F G | c |
 
 X: 2
 T: callback
@@ -14,7 +14,7 @@ M: 1/4
 L: 1/4
 K: C
 Q: 1/4=120
-| c g d b d d f g c |
+| c d g d | g g f g | c |
 
 X: 3
 T: callback
@@ -23,7 +23,7 @@ M: 1/4
 L: 1/4
 K: C
 Q: 1/4=120
-| e b f d f f a b e |
+| e f b f | b b a b | e |
 
 X: 4
 T: callback
@@ -32,5 +32,5 @@ M: 1/4
 L: 1/4
 K: C
 Q: 1/4=120
-| g d a f a a c d g |
+| g a d _a | d d c d | g |
 
