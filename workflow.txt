@@ -7,15 +7,15 @@
  // 4b. rest allocation 
           rest_duration = 4-remainder(word_count/4)
           example : the quick brown fox | jumps over z2 ||
-               therefore there would be 2 beats of rest         
+             therefore there would be 2 beats of rest         
  // 5. phrasing
           if period --> tonic+middle*middle_count+pre_dominant+dominant+tonic 
-            round(sentence_word_count) to the closest multiple of 4
-            
+             round(sentence_word_count) to the closest multiple of 4
+
           if comma  --> tonic+middle*word_count_before_comma+half_cadence_[sentiment]
-            round(word_count_before_comma) to the closest multiple of 4
-            
-// chords init // 
+             round(word_count_before_comma) to the closest multiple of 4
+
+// chords library // 
    // C is tonic //
    // chord = [bass root third fifth] //
    I    = [Cceg]  //happy    /   tonic//
@@ -29,54 +29,52 @@
    V    = [Ggbd]  //happy    /  ending//
    vi   = [Aace]  //neutral  /  middle//
    viio  = [Bbdf] //v sad    /  middle//
-   
+
    tonic_all = [I i]
    tonic_happy = [I]
    tonic_sad = [i]
-   
+
    middle_all = [ii iio iii vi viio]
    middle_neutral = [ii iii vi viio]
    middle_vsad = [iio viio]
-   
+
    pre_dominant_all = [IV iv ii6]
    pre_dominant_happy = [IV]
    pre_dominant_sad = [iv ii6]
-   
+
    dominant = [V]
-   
+
    //if comma//
    half_cadence_happy = [IV V]
    half_cadence_sad = [iv V]
    deceptive_cadence = [iv V VI]
-   
+
    //then, use tonic for final chord//
-   
+
   // chord progression templates for each sentence //
      // I ... middle ... IV V I  //happy
      // I ... middle ... IV V    //happy half
      // i ... middle ... iv V i  //sad 
      // i ... middle ... iv V    //sad half
      // i ... middle ... iv V iv //deceptive
-   
+
 // progression //
       progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + dominant + tonic
           if period
               middle_count = word_count - 4
               //use tonic_[sentiment]//
-   
+
           if comma
-              middle_count_before_comma = word_count_before_comma - 3 
-              
+              middle_count_before_comma = word_count_before_comma - 3
               //use half_cadence_[sentiment]//
               OR 
               //use deceptive_cadence//
-                     
-   
+
 // rhythm //
-    word_rhythm = 4 / syllable_count
-    rest_duration = 4-remainder(word_count/4) 
-   
-// example ABC //
+    word_rhythm = 4/syllable_count
+    rest_duration = 4-(remainder(word_count/4))
+
+// example ABC merge of two wav//
     X: 1
     T: Jesu, Joy of Man's Desiring (RH)
     C: J. S. Bach
@@ -87,7 +85,7 @@
     |(3zGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3cde (3dcB (3ABG |
     (3FGA (3DFA (3cBA |(3BGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3Edc (3BAG (3DGF |
     (3GBd (3gdB (3GBd | G8 |
-    
+
     X: 2
     T: Jesu, Joy of Man's Desiring (LH)
     C: J. S. Bach
@@ -98,46 +96,46 @@
     |G,,G,E, | B,,E,E,, | A,,B,,C, |
     D,F,D, | G,E,C, | B,,E,D, | C,^C,D, |
     G,,-(3:2:2G,,G,/ (3:2:2D,B,,/ | G,,4 |
-    
- //conversion example from roman numeral to ABC//
+
+ // conversion example from roman numeral to ABC //
     I ii iii IV --> 
 
-          X: 1 
-          T: callback
-          C: uncommonhax
-          M: 1/4
-          L: 1/4
-          K: C
-          Q: 1/4=60
-          | C D E F | G2 z2 |
+    X: 1 
+    T: callback
+    C: uncommonhax
+    M: 1/4
+    L: 1/4
+    K: C
+    Q: 1/4=60
+    | C D E F | G2 z2 |
 
-          X: 2
-          T: callback
-          C: uncommonhax
-          M: 1/4
-          L: 1/4
-          K: C
-          Q: 1/4=60
-          | c d e f | g2 z2 |
+    X: 2
+    T: callback
+    C: uncommonhax
+    M: 1/4
+    L: 1/4
+    K: C
+    Q: 1/4=60
+    | c d e f | g2 z2 |
 
-          X: 3
-          T: callback
-          C: uncommonhax
-          M: 1/4
-          L: 1/4
-          K: C
-          Q: 1/4=60
-          | e f g a | b2 z2 |
+    X: 3
+    T: callback
+    C: uncommonhax
+    M: 1/4
+    L: 1/4
+    K: C
+    Q: 1/4=60
+    | e f g a | b2 z2 |
 
-          X: 4
-          T: callback
-          C: uncommonhax
-          M: 1/4
-          L: 1/4
-          K: C
-          Q: 1/4=60
-          | g a b c | d2 z2 |
+    X: 4
+    T: callback
+    C: uncommonhax
+    M: 1/4
+    L: 1/4
+    K: C
+    Q: 1/4=60
+    | g a b c | d2 z2 |
 
 / / V A P O R W A V E / /
-if VAPOR || WAVE || VAPORWAVE 
+if VAPOR || WAVE || WAV || VAPORWAVE 
  then call with MACINTOSH PLUS リサフランク420 / 現代のコンピュ
