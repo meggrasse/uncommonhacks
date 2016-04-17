@@ -42,3 +42,6 @@ process = subprocess.Popen(merge34.split(), stdout=subprocess.PIPE)
 print process.communicate()[0]
 process = subprocess.Popen(mergefin.split(), stdout=subprocess.PIPE)
 print process.communicate()[0]
+
+shutil.move('final.wav', '/Users/Meg/Documents/Hackathons/uncommonhacks/app/static/final.wav')
+print "moved"

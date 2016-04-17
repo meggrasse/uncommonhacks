@@ -119,6 +119,7 @@ def get_chords(tuple_list):
 def simpleasabc(muzik):
 	"""transforms roman numeral chords to an abc file"""
 	s=""
+	print "found"
 	for i in range(1,5):
 		s=s+"X: %d\nT: callback\nC: uncommonhax\nM: 1/4\nL: 1/4\nK: C\nQ: 1/4=120\n|"%i
 		#s=s+"| C A F G |\n\n" #placeholder- this works

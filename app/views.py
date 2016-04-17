@@ -8,13 +8,12 @@ import twilio.twiml
 import requests
 from twilio.rest import TwilioRestClient
 from collections import deque
+import subprocess
+import os
+import time
 
 client = TwilioRestClient(account_sid, auth_token)
-<<<<<<< HEAD
 phone_number = ''
-=======
-song_url = 'http://ocrmirror.org/files/music/remixes/Street_Fighter_2_Guile%27s_Theme_Goes_with_Metal_OC_ReMix.mp3'
->>>>>>> 0f33d14679d8d6779af874755c4122d7d1591522
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -34,7 +33,7 @@ def index():
 
 	return render_template('index.html', ratings_data=ratings_data, pos=pos, neg=neg, neutral=neutral, form=form)
 
-@app.route("/message", methods=['GET', 'POST'])
+@app.route("/message", methods=['GET','POST'])
 def message():
 	#body_mes = client.messages.Body
 	resp = twilio.twiml.Response()
@@ -49,21 +48,38 @@ def message():
 	# print list_of_tuples
 	list_of_chords=get_chords(list_of_tuples)
 	# print list_of_chords
-	abcstring=simpleasabc(muz)
-	print abcstring
-	myabcfile=open("abcsheet.abc.txt",'w')
+	print "test"
+	abcstring=simpleasabc(list_of_chords)
+	print "test1"
+	myabcfile=open("app/PySynth/abcsheet.abc.txt",'w')
 	myabcfile.write(abcstring)
 	myabcfile.close()
-	return str(resp)
-
-@app.route("/makecall", methods=['GET', 'POST'])
-def makecall():
+	os.chdir("/Users/Meg/Documents/Hackathons/uncommonhacks/app/PySynth")
+	# command = "cd"
+	# process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
+	# print process.communicate()[0]
+	# command = "cd PySynth"
+	# process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
+	# print process.communicate()[0]
+	command = "python wavesdontdie.py abcsheet.abc.txt"
+	process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
+	print process.communicate()[0]
+	os.chdir("/Users/Meg/Documents/Hackathons/uncommonhacks")
 	f = open('phonenumber.txt', 'r')
 	phone_number = f.read()
 	call = client.calls.create(url="http://twimlbin.com/23667f37ab8451dbb3223f51d2248f21",
 		to=phone_number,
 		from_="+16307556548")
-	return "working"
+	return str(resp)
+
+# @app.route("/makecall", methods=['GET', 'POST'])
+# def makecall():
+# 	f = open('phonenumber.txt', 'r')
+# 	phone_number = f.read()
+# 	call = client.calls.create(url="http://twimlbin.com/23667f37ab8451dbb3223f51d2248f21",
+# 		to=phone_number,
+# 		from_="+16307556548")
+# 	return "working"
 
 if __name__ == "__main__":
     app.run(debug=True)
