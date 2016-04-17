@@ -78,14 +78,15 @@ print chords
 def simpleasabc(muzik):
 	s=""
 	for i in range(1,5):
-		s=s+"X: %d\nT: callback\nC: uncommonhax\nM: 1/4\nL: 1/4\nK: C\nQ: 1/4=120\n"%i
-		prog="| C A F G |\n\n" #placeholder
-		s=s+prog
-		# for note in muz:
-		# 	chords[note]
+		s=s+"X: %d\nT: callback\nC: uncommonhax\nM: 1/4\nL: 1/4\nK: C\nQ: 1/4=120\n| "%i
+		#s=s+"| C A F G |\n\n" #placeholder- this works
+		for note in muzik:
+			s=s+chords[note][i-1]+" "
+		s=s+'|\n\n'
 	return s
 
 abcstring=simpleasabc(muz)
+print abcstring
 myabcfile.write(abcstring)
 myabcfile.close()
 #works in pysynth with the placeholder
