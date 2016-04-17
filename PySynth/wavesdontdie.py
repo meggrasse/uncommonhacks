@@ -4,7 +4,7 @@ import os
 import sys
 
 file=""
-if sys.argv[1]==None:
+if len(sys.argv[1])<2:
 	print "Enter an abc file name"
 else: 
 	print "Working with your file: "+sys.argv[1]

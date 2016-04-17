@@ -37,7 +37,14 @@ def message():
 	messages = deque(client.messages.list())
 	last_text = messages.popleft().body
 	list_of_tuples = get_sent_tuples(parse_string(str(last_text)))
-	print list_of_tuples
+	# print list_of_tuples
+	list_of_chords=get_chords(list_of_tuples)
+	# print list_of_chords
+	abcstring=simpleasabc(muz)
+	print abcstring
+	myabcfile=open("abcsheet.abc.txt",'w')
+	myabcfile.write(abcstring)
+	myabcfile.close()
 	return str(resp)
 
 if __name__ == "__main__":

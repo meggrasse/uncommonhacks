@@ -5,7 +5,7 @@ myabcfile=open("abcsheet.abc.txt",'w')
 chords = {'I': ['c', 'c', 'e', 'g'], 'i': ['C', 'c', '_e', 'g'], 'ii' : ['D','d', 'f', 'a'], 'ii6': ['F', 'd', 'f', 'a'], 'iio': ['D', 'd', 'f', '_a'], 'iii': ['E', 'e', 'g', 'b'], 'IV' : ['F', 'f', 'a', 'c'], 'iv' : ['F', 'f', '_a', 'c'], 'V' : ['G', 'g', 'b', 'd'], 'Vs': ['G', 'b', 'd', 'f'], 'vi' : ['A', 'a', 'c', 'e'], 'viio' : ['B', 'b', 'd', 'f']}
 categories = {'happy' : ['ii', 'iii', 'V', 'vi'], 'sad' : ['iio', 'viio']}
 #the below tuplist is just a tester
-tuplist=[(0.6,1),(0.5,1),(0.9,1),(0.2,1),(0.6,1),(0.6,1),(0.9,1),(0.3,1),(0.5,1)]
+tuplist=[(0.8,1),(0.9,1),(0.7,1),(0.6,1),(0.7,1),(0.2,1),(0.9,1),(0.8,1),(0.9,1),(0.7,1),(0.3,1),(0.6,1)]
 def get_chords(tuple_list):
 	"""chooses roman numeral chords based on text input"""
 	word_count = len(tuple_list)
@@ -90,7 +90,9 @@ def simpleasabc(muzik):
 			if count == 4:
 				s=s+" |"
 				count=0
-		s=s+' |\n\n'
+		if count!=0:
+			s=s+" z"+str(4-count)+" |"
+		s=s+'\n\n'
 	return s
 
 abcstring=simpleasabc(muz)
