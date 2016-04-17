@@ -77,13 +77,46 @@
     rest_duration = 4-remainder(word_count/4) 
    
 //example ABC//
-   X: 1
-   T: title
-   C: composer
-   N: uncommon hax
-   M: 4/4
-   L: 1/4
-   K: C
-   
-   |: G2B B>AB | c2A A>ce | d>ed cAc | G2B B2D \
-   |  G2B B>AB | c2A A>ce | d>ed cEF | G4  z2 :|
+    X: 1
+    T: Jesu, Joy of Man's Desiring (RH)
+    C: J. S. Bach
+    M: 3/4
+    L: 1/8
+    K: G
+    Q: 1/4=80
+    |(3zGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3cde (3dcB (3ABG |
+    (3FGA (3DFA (3cBA |(3BGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3Edc (3BAG (3DGF |
+    (3GBd (3gdB (3GBd | G8 |
+    
+    X: 2
+    T: Jesu, Joy of Man's Desiring (LH)
+    C: J. S. Bach
+    M: 3/4
+    L: 1/4
+    K: G
+    Q: 1/4=80
+    |G,,G,E, | B,,E,E,, | A,,B,,C, |
+    D,F,D, | G,E,C, | B,,E,D, | C,^C,D, |
+    G,,-(3:2:2G,,G,/ (3:2:2D,B,,/ | G,,4 |
+    
+ //conversion from roman numeral to ABC//
+    I ii iii IV --> 
+          X: 1 
+          L: 1/4
+          Q: 1/4=60
+              | C D E F | G2 z2 |
+
+          X: 2
+          L: 1/4
+          Q: 1/4=60
+              | c d e f | g2 z2 |
+
+          X: 3
+          L: 1/4
+          Q: 1/4=60
+              | e f g a | 2 z2 |
+
+          X: 4
+          L: 1/4
+          Q: 1/4=60
+              | g a b c | d2 z3 |
