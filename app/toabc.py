@@ -7,6 +7,7 @@ categories = {'happy' : ['ii', 'iii', 'V', 'vi'], 'sad' : ['iio', 'viio']}
 #the below tuplist is just a tester
 tuplist=[(0.6,1),(0.5,1),(0.9,1),(0.2,1),(0.6,1),(0.6,1),(0.9,1),(0.3,1),(0.5,1)]
 def get_chords(tuple_list):
+	"""chooses roman numeral chords based on text input"""
 	word_count = len(tuple_list)
 	music = []
 	if word_count == 1 or word_count == 0:
@@ -75,7 +76,9 @@ print muz
 print chords
 # got the chords boy
 # now make it a .abc lad
+
 def simpleasabc(muzik):
+	"""transforms roman numeral chords to an abc file"""
 	s=""
 	for i in range(1,5):
 		s=s+"X: %d\nT: callback\nC: uncommonhax\nM: 1/4\nL: 1/4\nK: C\nQ: 1/4=120\n| "%i
