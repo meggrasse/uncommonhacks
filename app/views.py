@@ -10,7 +10,11 @@ from twilio.rest import TwilioRestClient
 from collections import deque
 
 client = TwilioRestClient(account_sid, auth_token)
+<<<<<<< HEAD
 phone_number = ''
+=======
+song_url = 'http://ocrmirror.org/files/music/remixes/Street_Fighter_2_Guile%27s_Theme_Goes_with_Metal_OC_ReMix.mp3'
+>>>>>>> 0f33d14679d8d6779af874755c4122d7d1591522
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -42,6 +46,7 @@ def message():
 	f = open('phonenumber.txt', 'w')
 	f.write(phone_number)
 	list_of_tuples = get_sent_tuples(parse_string(str(last_text)))
+<<<<<<< HEAD
 	my_chords = analyze_tuples(list_of_tuples)
 	return redirect("/makecall") 
 
@@ -54,6 +59,10 @@ def makecall():
 		to=phone_number,
 		from_="+16307556548")
 	return "working"
+=======
+	print list_of_tuples
+	return str(resp)
+>>>>>>> 0f33d14679d8d6779af874755c4122d7d1591522
 
 if __name__ == "__main__":
     app.run(debug=True)
