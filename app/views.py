@@ -46,9 +46,8 @@ def message():
 	f = open('phonenumber.txt', 'w')
 	f.write(phone_number)
 	list_of_tuples = get_sent_tuples(parse_string(str(last_text)))
-<<<<<<< HEAD
 	my_chords = analyze_tuples(list_of_tuples)
-	return redirect("/makecall") 
+	return "text working"
 
 @app.route("/makecall", methods=['GET', 'POST'])
 def makecall():
@@ -59,10 +58,6 @@ def makecall():
 		to=phone_number,
 		from_="+16307556548")
 	return "working"
-=======
-	print list_of_tuples
-	return str(resp)
->>>>>>> 0f33d14679d8d6779af874755c4122d7d1591522
 
 if __name__ == "__main__":
     app.run(debug=True)
