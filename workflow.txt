@@ -37,7 +37,7 @@
  
    //middle
    middle_all = [ii iio iii V vi viio]
-   middle_neutral = [ii iii V vi viio]
+   middle_neutral = [ii iii V vi]
    middle_vsad = [iio viio]
 
    pre_dominant_all = [IV iv iif]
