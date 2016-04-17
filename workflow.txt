@@ -64,6 +64,18 @@
      // i ... middle ... iv Vs   //sad half
      // i ... middle ... IV V VI //happy deceptive
      // i ... middle ... iv V VI //sad deceptive
+     
+// word count conditions //
+word_count = 1 
+ then I|i
+word_count = 2
+ then V I|i
+word_count = 3
+ then I|i V I|i
+word_count = 4
+ then I|i IV|iv V I|i
+word_count > 4 
+ then I|i sentence.length-4*rand(middle_[sentiment] IV|iv V I|i
 
 // progression //
       progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + CONDITIONAL
