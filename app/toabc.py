@@ -69,3 +69,5 @@ def get_chords(tuple_list):
 
 muz=get_chords(tuplist)
 print muz
+# got the chords boy
+# now make it a .abc lad
