@@ -1,7 +1,10 @@
 import random
+
+myabcfile=open("abcsheet.abc.txt",'w')
+
 chords = {'I': ['c', 'c', 'e', 'g'], 'i': ['C', 'c', '_e', 'g'], 'ii' : ['D','d', 'f', 'a'], 'ii6': ['F', 'd', 'f', 'a'], 'iio': ['D', 'd', 'f', '_a'], 'iii': ['E', 'e', 'g', 'b'], 'IV' : ['F', 'f', 'a', 'c'], 'iv' : ['F', 'f', '_a', 'c'], 'V' : ['G', 'g', 'b', 'd'], 'Vs': ['G', 'b', 'd', 'f'], 'vi' : ['A', 'a', 'c', 'e'], 'viio' : ['B', 'b', 'd', 'f']}
 categories = {'happy' : ['ii', 'iii', 'V', 'vi'], 'sad' : ['iio', 'viio']}
-# hi i'm pretty smashed hello there
+#the below tuplist is just a tester
 tuplist=[(0.6,1),(0.5,1),(0.9,1),(0.2,1),(0.6,1),(0.6,1),(0.9,1),(0.3,1),(0.5,1)]
 def get_chords(tuple_list):
 	word_count = len(tuple_list)
@@ -69,5 +72,20 @@ def get_chords(tuple_list):
 
 muz=get_chords(tuplist)
 print muz
+print chords
 # got the chords boy
 # now make it a .abc lad
+def simpleasabc(muzik):
+	s=""
+	for i in range(1,5):
+		s=s+"X: %d\nT: callback\nC: uncommonhax\nM: 1/4\nL: 1/4\nK: C\nQ: 1/4=120\n"%i
+		prog="| C A F G |\n\n" #placeholder
+		s=s+prog
+		# for note in muz:
+		# 	chords[note]
+	return s
+
+abcstring=simpleasabc(muz)
+myabcfile.write(abcstring)
+myabcfile.close()
+#works in pysynth with the placeholder
