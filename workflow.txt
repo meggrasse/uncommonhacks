@@ -102,25 +102,37 @@
  //conversion from roman numeral to ABC//
     I ii iii IV --> 
           X: 1 
+          T: callback
+          C: uncommonhax
           M: 1/4
           L: 1/4
+          K: C
           Q: 1/4=60
               | C D E F | G2 z2 |
 
           X: 2
+          T: callback
+          C: uncommonhax
           M: 1/4
           L: 1/4
+          K: C
           Q: 1/4=60
               | c d e f | g2 z2 |
 
           X: 3
+          T: callback
+          C: uncommonhax
           M: 1/4
           L: 1/4
+          K: C
           Q: 1/4=60
               | e f g a | 2 z2 |
 
           X: 4
+          T: callback
+          C: uncommonhax
           M: 1/4
           L: 1/4
+          K: C
           Q: 1/4=60
               | g a b c | d2 z3 |
