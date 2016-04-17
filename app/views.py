@@ -9,6 +9,7 @@ from collections import deque
 
 ACCOUNT_SID = "AC01fe30b094e3251e3f48f0acb4853310"
 AUTH_TOKEN = "47c5f4501af1693a8ecfdcd887aa2632"
+payload = ''
 
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
@@ -34,10 +35,13 @@ def index():
 def message():
 	#body_mes = client.messages.Body
 	resp = twilio.twiml.Response()
-	resp.message("sending back")
+	resp.message("Thanks, expect a call soon!")
 	messages = deque(client.messages.list())
 	last_text = messages.popleft().body
-	print last_text
+	list_of_tuples = get_sent_tuples(parse_string(str(last_text)))
+	print list_of_tuples
+	my_chords = analyze_tuples(list_of_tuples)
+	print my_chords
 	return str(resp)
 
 if __name__ == "__main__":
