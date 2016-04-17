@@ -14,22 +14,21 @@
           if end of paragraph --> perfect cadence
 
 
-
-
 // chords library // 
    // C is tonic //
    // chord = [bass_root third fifth] // exception iio [bass_third root fifth
-   I    = [Ceg]  //happy    /   tonic//
-   i    = [C_eg] //sad      /   tonic//
-   ii   = [Dfa]  //neutral  /  middle//
-   ii6  = [Fda]  //neutral  /  middle//
-   iio  = [Df_a] //v sad    /  middle//
-   iii  = [Egb]  //neutral  /  middle//
-   IV   = [Fac]  //happy    /  ending//
-   iv   = [F_ac] //sad      /  ending//
-   V    = [Gbd]  //happy    /  ending//
-   vi   = [Ace]  //neutral  /  middle//
-   viio  = [Bdf] //v sad    /  middle//
+   I    = [Cceg]  //happy    /   tonic//
+   i    = [Cc_eg] //sad      /   tonic//
+   ii   = [Ddfa]  //neutral  /  middle//
+   iif  = [Fdfa]  //neutral  /  middle//
+   iio  = [Ddf_a] //v sad    /  middle//
+   iii  = [Eegb]  //neutral  /  middle//
+   IV   = [Ffac]  //happy    /  ending//
+   iv   = [Ff_ac] //sad      /  ending//
+   V    = [Ggbd]  //happy    /  ending//
+   Vs   = [Gbdf]  //happy dis/  ending//
+   vi   = [Aace]  //neutral  /  middle//
+   viio  = [Bbdf] //v sad    /  middle//
 
    //start
    tonic_all = [I i]
@@ -41,9 +40,9 @@
    middle_neutral = [ii iii V vi viio]
    middle_vsad = [iio viio]
 
-   pre_dominant_all = [IV iv ii6]
+   pre_dominant_all = [IV iv iif]
    pre_dominant_happy = [IV]
-   pre_dominant_sad = [iv ii6]
+   pre_dominant_sad = [iv iif]
  
    //if period//
    half_cadence_happy = [IV V2]
@@ -61,8 +60,8 @@
 // chord progression templates for each sentence //
      // I ... middle ... IV V I  //happy
      // i ... middle ... iv V i  //sad 
-     // I ... middle ... IV V    //happy half
-     // i ... middle ... iv V    //sad half
+     // I ... middle ... IV Vs   //happy half
+     // i ... middle ... iv Vs   //sad half
      // i ... middle ... IV V VI //happy deceptive
      // i ... middle ... iv V VI //sad deceptive
 
@@ -108,7 +107,7 @@
     G,,-(3:2:2G,,G,/ (3:2:2D,B,,/ | G,,4 |
 
  // conversion example from roman numeral to ABC //
-    I vi IV V I2 --> 
+    I vi IV Vs I2 --> 
 
     X: 1 
     T: callback
@@ -126,7 +125,7 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | c a f g | c2 z2 |
+    | c a f b | c2 z2 |
 
     X: 3
     T: callback
@@ -135,7 +134,7 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | e c a b | e2 z2 |
+    | e c a d | e2 z2 |
 
     X: 4
     T: callback
@@ -144,9 +143,8 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | g e c d | g2 z2 |
-    
-    
+    | g e c f | g2 z2 |
+
 
 / / V A P O R W A V E / /
 if VAPOR || WAVE || WAV || VAPORWAVE 
