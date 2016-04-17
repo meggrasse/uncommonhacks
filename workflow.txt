@@ -33,12 +33,12 @@
    // chord progression template // 
    tonic_[sentiment] + middle_[sentiment] + pre_dominant_[sentiment] + dominant + tonic_[sentiment]
 
-   //start
+   //start//
    tonic_all = [I i]
    tonic_happy = [I]
    tonic_sad = [i]
  
-   //middle
+   //middle//
    middle_all = [ii iio iii V vi viio]
    middle_neutral = [ii iii V vi]
    middle_vsad = [iio viio]
@@ -56,16 +56,16 @@
    deceptive_cadence_sad = [iv V VI]
  
 // word count conditions //
-if word_count = 1 
- then I|i
-if word_count = 2
- then V I|i
-if word_count = 3
- then I|i V I|i
-if word_count = 4
- then I|i IV|iv V I|i
-if word_count > 4 
- then I|i sentence.length-4*rand(middle_[sentiment] IV|iv V I|i
+    if word_count = 1 
+     then I|i
+    if word_count = 2
+     then V I|i
+    if word_count = 3
+     then I|i V I|i
+    if word_count = 4
+     then I|i IV|iv V I|i
+    if word_count > 4 
+     then I|i sentence.length-4*rand(middle_[sentiment] IV|iv V I|i
 
 // example ABC merge of two wav//
     X: 1
