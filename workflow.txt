@@ -85,7 +85,7 @@
     K: G
     Q: 1/4=80
     |(3zGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3cde (3dcB (3ABG |
-    (3FGA (3DFA (3cBA |�(3BGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3Edc (3BAG (3DGF |
+    (3FGA (3DFA (3cBA |(3BGA (3Bdc (3ced | (3dgf (3gdB (3GAB | (3Edc (3BAG (3DGF |
     (3GBd (3gdB (3GBd | G8 |
     
     X: 2
