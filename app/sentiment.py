@@ -6,12 +6,12 @@ import urllib #visit page
 import re #regex
 
 
-
 def parse_string(paragraph):
 	sentences = map(str.strip, paragraph.split("."))
 	for sentence in sentences:
 		if not len(sentence):
 			sentences.pop()
+	print sentences
 	return sentences
 
 def get_ratings(user_str):
@@ -22,8 +22,6 @@ def get_ratings(user_str):
 	response = subprocess.check_output([command], shell=True)
 
 	data = json.loads(response)
-	print data
-
 	return data
 
 def get_sent_tuples(sentences):
@@ -48,23 +46,8 @@ def get_syllables(word):
 	numsyll=syllablesreg.search(str(rawdata))
 	print int(numsyll.group()[0])
 
-'''
-I    = [Cceg]  //happy    /   tonic//
-   i    = [Cc_eg] //sad      /   tonic//
-   ii   = [Ddfa]  //neutral  /  middle//
-   ii6  = [Fdfa]  //neutral  /  middle//
-   iio  = [Ddf_a] //v sad    /  middle//
-   iii  = [Eegb]  //neutral  /  middle//
-   IV   = [Ffac]  //happy    /  ending//
-   iv   = [Ff_ac] //sad      /  ending//
-   V    = [Ggbd]  //happy    /  ending//
-   vi   = [Aace]  //neutral  /  middle//
-   viio  = [Bbdf] //v sad    /  middle//
- '''
 
 chords = {'I': '[Cceg]', 'i': '[Cc_eg]', 'ii' : '[Ddfa]', 'ii6': '[Fdfa]', 'iio': '[Ddf_a]', 'iii': '[Eegb]', 'IV' : '[Ffac]', 'iv' : '[Ff_ac]', 'V' : '[Ggbd]', 'vi' : '[Aace]', 'viio' : '[Bbdf]'}
-
-
 
 def analyze_tuples(tuple_list):
 	word_chords = []
@@ -96,4 +79,3 @@ def analyze_tuples(tuple_list):
 		word_chords.append(chord)
 
 	return word_chords
-
