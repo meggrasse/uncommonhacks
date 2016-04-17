@@ -3,7 +3,7 @@
 from flask import Flask
 from flask.ext.assets import Environment, Bundle
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 #get scss
 assets = Environment(app)
