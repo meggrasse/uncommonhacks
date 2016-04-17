@@ -30,6 +30,9 @@
    vi   = [Aace]  //neutral  /  middle//
    viio  = [Bbdf] //v sad    /  middle//
 
+   // chord progression template // 
+   tonic_[sentiment] + middle_[sentiment] + pre_dominant_[sentiment] + dominant + tonic_[sentiment]
+
    //start
    tonic_all = [I i]
    tonic_happy = [I]
@@ -37,7 +40,7 @@
  
    //middle
    middle_all = [ii iio iii V vi viio]
-   middle_neutral = [ii iii V vi viio]
+   middle_neutral = [ii iii V vi]
    middle_vsad = [iio viio]
 
    pre_dominant_all = [IV iv iif]
@@ -45,43 +48,24 @@
    pre_dominant_sad = [iv iif]
  
    //if period//
-   half_cadence_happy = [IV V2]
-   half_cadence_sad = [iv V2]
+   half_cadence_happy = [IV V]
+   half_cadence_sad = [iv V]
  
    //if comma//
-   deceptive_cadence_happy = [IV V VI2]
-   deceptive_cadence_sad = [iv V VI2]
+   deceptive_cadence_happy = [IV V VI]
+   deceptive_cadence_sad = [iv V VI]
  
-   //if end of paragraph//
-   tonic_end_all = [I2 i2]
-   tonic_end_all_happy = [I2]
-   tonic_end_all_sad = [i2]
-
-// chord progression templates for each sentence //
-     // I ... middle ... IV V I  //happy
-     // i ... middle ... iv V i  //sad 
-     // I ... middle ... IV Vs   //happy half
-     // i ... middle ... iv Vs   //sad half
-     // i ... middle ... IV V VI //happy deceptive
-     // i ... middle ... iv V VI //sad deceptive
-
-// progression //
-      progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + CONDITIONAL
-          IF period
-             IF period & end of paragraph
-               middle_count = word_count - 4
-               //use perfect cadence: IV||iv V I||i/
-             ELSE 
-               middle_count = word_count - 3
-               //use half cadence: VI||iv V//
-
-          IF comma
-              middle_count_before_comma = word_count_before_comma - 3
-              //use deceptive: IV||iv V VI//
-
-// rhythm //
-    word_rhythm = 4/syllable_count
-    rest_duration = 4-(remainder(word_count/4))
+// word count conditions //
+if word_count = 1 
+ then I|i
+if word_count = 2
+ then V I|i
+if word_count = 3
+ then I|i V I|i
+if word_count = 4
+ then I|i IV|iv V I|i
+if word_count > 4 
+ then I|i sentence.length-4*rand(middle_[sentiment] IV|iv V I|i
 
 // example ABC merge of two wav//
     X: 1
@@ -145,7 +129,37 @@ K: C
 Q: 1/4=120
 | g e c f | g2 z2 |
 
-
 / / V A P O R W A V E / /
 if VAPOR || WAVE || WAV || VAPORWAVE 
  then call with MACINTOSH PLUS リサフランク420 / 現代のコンピュ
+
+ //////////////////////DUMP////////////////////////
+// chord progression examples for each sentence //
+     // I ... middle ... IV V I  //happy
+     // i ... middle ... iv V i  //sad 
+     // I ... middle ... IV Vs   //happy half
+     // i ... middle ... iv Vs   //sad half
+     // i ... middle ... IV V VI //happy deceptive
+     // i ... middle ... iv V VI //sad deceptive
+
+// rhythm //
+  //word_rhythm = 4/syllable_count
+  //rest_duration = 4-(remainder(word_count/4))
+
+//if end of paragraph//
+  //tonic_end_all = [I2 i2]
+  //tonic_end_all_happy = [I2]
+  //tonic_end_all_sad = [i2]
+  
+// progression //
+   progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + CONDITIONAL
+    IF period
+       IF period & end of paragraph
+         middle_count = word_count - 4
+         //use perfect cadence: IV||iv V I||i/
+       ELSE 
+         middle_count = word_count - 3
+         //use half cadence: VI||iv V//
+    IF comma
+        middle_count_before_comma = word_count_before_comma - 3
+        //use deceptive: IV||iv V VI//
