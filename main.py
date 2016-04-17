@@ -2,7 +2,7 @@
 
 import sys
 from app.sentiment import *
-from app.views import *
+# from app.views import *
 
 def main():
 	if len(sys.argv) != 2:
@@ -18,7 +18,8 @@ def main():
 
 	list_of_tuples = get_sent_tuples(parse_string(user_str))
 	# chords = analyze_tuples(data)
-	print list_of_tuples
+	list_of_chords=get_chords(list_of_tuples)
+	print list_of_chords
 
 
 if __name__ == '__main__':

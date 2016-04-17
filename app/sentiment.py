@@ -55,7 +55,7 @@ def get_chords(tuple_list):
 	word_count = len(tuple_list)
 	music = []
 
-	if word_count == 1 || word_count == 0:
+	if word_count == 1 or word_count == 0:
 		if tuple_list[0][0]>=0.5:
 			music.append('I')
 		else:
