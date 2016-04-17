@@ -51,14 +51,14 @@
    
    //then, use tonic for final chord//
    
-// chord progression templates for each sentence//
-   // I ... middle ... IV V I  //happy
-   // I ... middle ... IV V    //happy half
-   // i ... middle ... iv V i  //sad 
-   // i ... middle ... iv V    //sad half
-   // i ... middle ... iv V iv //deceptive
+  // chord progression templates for each sentence //
+     // I ... middle ... IV V I  //happy
+     // I ... middle ... IV V    //happy half
+     // i ... middle ... iv V i  //sad 
+     // i ... middle ... iv V    //sad half
+     // i ... middle ... iv V iv //deceptive
    
-//progression
+// progression //
       progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + dominant + tonic
           if period
               middle_count = word_count - 4
@@ -72,11 +72,11 @@
               //use deceptive_cadence//
                      
    
-// rhythm
+// rhythm //
     word_rhythm = 4 / syllable_count
     rest_duration = 4-remainder(word_count/4) 
    
-//example ABC//
+// example ABC //
     X: 1
     T: Jesu, Joy of Man's Desiring (RH)
     C: J. S. Bach
@@ -102,21 +102,25 @@
  //conversion from roman numeral to ABC//
     I ii iii IV --> 
           X: 1 
+          M: 1/4
           L: 1/4
           Q: 1/4=60
               | C D E F | G2 z2 |
 
           X: 2
+          M: 1/4
           L: 1/4
           Q: 1/4=60
               | c d e f | g2 z2 |
 
           X: 3
+          M: 1/4
           L: 1/4
           Q: 1/4=60
               | e f g a | 2 z2 |
 
           X: 4
+          M: 1/4
           L: 1/4
           Q: 1/4=60
               | g a b c | d2 z3 |
