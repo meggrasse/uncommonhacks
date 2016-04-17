@@ -99,8 +99,9 @@
     D,F,D, | G,E,C, | B,,E,D, | C,^C,D, |
     G,,-(3:2:2G,,G,/ (3:2:2D,B,,/ | G,,4 |
     
- //conversion from roman numeral to ABC//
+ //conversion example from roman numeral to ABC//
     I ii iii IV --> 
+
           X: 1 
           T: callback
           C: uncommonhax
@@ -108,7 +109,7 @@
           L: 1/4
           K: C
           Q: 1/4=60
-              | C D E F | G2 z2 |
+          | C D E F | G2 z2 |
 
           X: 2
           T: callback
@@ -117,7 +118,7 @@
           L: 1/4
           K: C
           Q: 1/4=60
-              | c d e f | g2 z2 |
+          | c d e f | g2 z2 |
 
           X: 3
           T: callback
@@ -126,7 +127,7 @@
           L: 1/4
           K: C
           Q: 1/4=60
-              | e f g a | b2 z2 |
+          | e f g a | b2 z2 |
 
           X: 4
           T: callback
@@ -135,8 +136,8 @@
           L: 1/4
           K: C
           Q: 1/4=60
-              | g a b c | d2 z2 |
+          | g a b c | d2 z2 |
 
 / / V A P O R W A V E / /
 if VAPOR || WAVE || VAPORWAVE 
- then MACINTOSH PLUS リサフランク420 / 現代のコンピュ
+ then call with MACINTOSH PLUS リサフランク420 / 現代のコンピュ
