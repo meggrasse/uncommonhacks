@@ -17,7 +17,7 @@
 
 // chords library // 
    // C is tonic //
-   // chord = [bass root third fifth] //
+   // chord = [bass_root third fifth] // exception iio [bass_third root fifth
    I    = [Ceg]  //happy    /   tonic//
    i    = [C_eg] //sad      /   tonic//
    ii   = [Dfa]  //neutral  /  middle//
