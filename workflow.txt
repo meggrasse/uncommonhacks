@@ -101,11 +101,19 @@
     
  //conversion from roman numeral to ABC//
     I ii iii IV --> 
-          X:1 
-              |C D E F|
-          X:2
-              |c d e f|
-          X:3
-              |e f g a|
-          X:4
-              |g a b c|
+          X: 1 
+          L: 1/16
+          Q: 1/4=40
+              | C D E F | G2 z2 |
+          X: 2
+          L: 1/16
+          Q: 1/4=40
+              | c d e f | g2 z2 |
+          X: 3
+          L: 1/16
+          Q: 1/4=40
+              | e f g a | 2 z2 |
+          X: 4
+          L: 1/16
+          Q: 1/4=40
+              | g a b c | d2 z3 |
