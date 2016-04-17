@@ -17,8 +17,8 @@ def main():
 	# neutral = data['probability']['neutral']
 
 	list_of_tuples = get_sent_tuples(parse_string(user_str))
-	chords = analyze_tuples(data)
-	# print chords
+	# chords = analyze_tuples(data)
+	print list_of_tuples
 
 
 if __name__ == '__main__':

@@ -9,6 +9,7 @@ from twilio.rest import TwilioRestClient
 from collections import deque
 
 client = TwilioRestClient(account_sid, auth_token)
+song_url = 'http://ocrmirror.org/files/music/remixes/Street_Fighter_2_Guile%27s_Theme_Goes_with_Metal_OC_ReMix.mp3'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -37,8 +38,6 @@ def message():
 	last_text = messages.popleft().body
 	list_of_tuples = get_sent_tuples(parse_string(str(last_text)))
 	print list_of_tuples
-	my_chords = analyze_tuples(list_of_tuples)
-	print my_chords
 	return str(resp)
 
 if __name__ == "__main__":
