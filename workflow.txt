@@ -18,17 +18,17 @@
 // chords library // 
    // C is tonic //
    // chord = [bass root third fifth] //
-   I    = [Cceg]  //happy    /   tonic//
-   i    = [Cc_eg] //sad      /   tonic//
-   ii   = [Ddfa]  //neutral  /  middle//
-   ii6  = [Fdfa]  //neutral  /  middle//
-   iio  = [Ddf_a] //v sad    /  middle//
-   iii  = [Eegb]  //neutral  /  middle//
-   IV   = [Ffac]  //happy    /  ending//
-   iv   = [Ff_ac] //sad      /  ending//
-   V    = [Ggbd]  //happy    /  ending//
-   vi   = [Aace]  //neutral  /  middle//
-   viio  = [Bbdf] //v sad    /  middle//
+   I    = [Ceg]  //happy    /   tonic//
+   i    = [C_eg] //sad      /   tonic//
+   ii   = [Dfa]  //neutral  /  middle//
+   ii6  = [Fda]  //neutral  /  middle//
+   iio  = [Df_a] //v sad    /  middle//
+   iii  = [Egb]  //neutral  /  middle//
+   IV   = [Fac]  //happy    /  ending//
+   iv   = [F_ac] //sad      /  ending//
+   V    = [Gbd]  //happy    /  ending//
+   vi   = [Ace]  //neutral  /  middle//
+   viio  = [Bdf] //v sad    /  middle//
 
    tonic_all = [I i]
    tonic_happy = [I]
@@ -116,18 +116,9 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | c d e f | g2 z2 |
-
-    X: 3
-    T: callback
-    C: uncommonhax
-    M: 1/4
-    L: 1/4
-    K: C
-    Q: 1/4=60
     | e f g a | b2 z2 |
 
-    X: 4
+    X: 3
     T: callback
     C: uncommonhax
     M: 1/4
