@@ -79,3 +79,6 @@ def analyze_tuples(tuple_list):
 		word_chords.append(chord)
 
 	return word_chords
+
+
+
