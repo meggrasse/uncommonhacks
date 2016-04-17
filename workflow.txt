@@ -9,66 +9,75 @@
           example : the quick brown fox | jumps over z2 ||
              therefore there would be 2 beats of rest         
  // 5. phrasing
-          if period --> tonic+middle*middle_count+pre_dominant+dominant+tonic 
-             round(sentence_word_count) to the closest multiple of 4
+          if comma  --> deceptive cadence
+          if period --> half cadence
+          if end of paragraph --> perfect cadence
 
-          if comma  --> tonic+middle*word_count_before_comma+half_cadence_[sentiment]
-             round(word_count_before_comma) to the closest multiple of 4
 
 // chords library // 
    // C is tonic //
    // chord = [bass_root third fifth] // exception iio [bass_third root fifth
-   I    = [Ceg]  //happy    /   tonic//
-   i    = [C_eg] //sad      /   tonic//
-   ii   = [Dfa]  //neutral  /  middle//
-   ii6  = [Fda]  //neutral  /  middle//
-   iio  = [Df_a] //v sad    /  middle//
-   iii  = [Egb]  //neutral  /  middle//
-   IV   = [Fac]  //happy    /  ending//
-   iv   = [F_ac] //sad      /  ending//
-   V    = [Gbd]  //happy    /  ending//
-   vi   = [Ace]  //neutral  /  middle//
-   viio  = [Bdf] //v sad    /  middle//
+   I    = [Cceg]  //happy    /   tonic//
+   i    = [Cc_eg] //sad      /   tonic//
+   ii   = [Ddfa]  //neutral  /  middle//
+   iif  = [Fdfa]  //neutral  /  middle//
+   iio  = [Ddf_a] //v sad    /  middle//
+   iii  = [Eegb]  //neutral  /  middle//
+   IV   = [Ffac]  //happy    /  ending//
+   iv   = [Ff_ac] //sad      /  ending//
+   V    = [Ggbd]  //happy    /  ending//
+   Vs   = [Gbdf]  //happy dis/  ending//
+   vi   = [Aace]  //neutral  /  middle//
+   viio  = [Bbdf] //v sad    /  middle//
 
+   //start
    tonic_all = [I i]
    tonic_happy = [I]
    tonic_sad = [i]
-
-   middle_all = [ii iio iii vi viio]
-   middle_neutral = [ii iii vi viio]
+ 
+   //middle
+   middle_all = [ii iio iii V vi viio]
+   middle_neutral = [ii iii V vi viio]
    middle_vsad = [iio viio]
 
-   pre_dominant_all = [IV iv ii6]
+   pre_dominant_all = [IV iv iif]
    pre_dominant_happy = [IV]
-   pre_dominant_sad = [iv ii6]
-
-   dominant = [V]
-
+   pre_dominant_sad = [iv iif]
+ 
+   //if period//
+   half_cadence_happy = [IV V2]
+   half_cadence_sad = [iv V2]
+ 
    //if comma//
-   half_cadence_happy = [IV V]
-   half_cadence_sad = [iv V]
-   deceptive_cadence = [iv V VI]
+   deceptive_cadence_happy = [IV V VI2]
+   deceptive_cadence_sad = [iv V VI2]
+ 
+   //if end of paragraph//
+   tonic_end_all = [I2 i2]
+   tonic_end_all_happy = [I2]
+   tonic_end_all_sad = [i2]
 
-   //then, use tonic for final chord//
-
-  // chord progression templates for each sentence //
+// chord progression templates for each sentence //
      // I ... middle ... IV V I  //happy
-     // I ... middle ... IV V    //happy half
      // i ... middle ... iv V i  //sad 
-     // i ... middle ... iv V    //sad half
-     // i ... middle ... iv V iv //deceptive
+     // I ... middle ... IV Vs   //happy half
+     // i ... middle ... iv Vs   //sad half
+     // i ... middle ... IV V VI //happy deceptive
+     // i ... middle ... iv V VI //sad deceptive
 
 // progression //
-      progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + dominant + tonic
-          if period
-              middle_count = word_count - 4
-              //use tonic_[sentiment]//
+      progression = tonic_[sentiment] + (middle_count)*rand(middle_[sentiment]) + rand(pre_dominant_[sentiment]) + CONDITIONAL
+          IF period
+             IF period & end of paragraph
+               middle_count = word_count - 4
+               //use perfect cadence: IV||iv V I||i/
+             ELSE 
+               middle_count = word_count - 3
+               //use half cadence: VI||iv V//
 
-          if comma
+          IF comma
               middle_count_before_comma = word_count_before_comma - 3
-              //use half_cadence_[sentiment]//
-              OR 
-              //use deceptive_cadence//
+              //use deceptive: IV||iv V VI//
 
 // rhythm //
     word_rhythm = 4/syllable_count
@@ -98,34 +107,44 @@
     G,,-(3:2:2G,,G,/ (3:2:2D,B,,/ | G,,4 |
 
  // conversion example from roman numeral to ABC //
-    I vi IV V I2 --> 
+    I vi IV Vs I2 --> 
 
-    X: 1 
-    T: callback
-    C: uncommonhax
-    M: 1/4
-    L: 1/4
-    K: C
-    Q: 1/4=60
-    | C A F G | C2 z2 |
+X: 1 
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| C A F G | C2 z2 |
 
-    X: 2
-    T: callback
-    C: uncommonhax
-    M: 1/4
-    L: 1/4
-    K: C
-    Q: 1/4=60
-    | e c a b | e2 z2 |
+X: 2 
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| c a f b | c2 z2 |
 
-    X: 3
-    T: callback
-    C: uncommonhax
-    M: 1/4
-    L: 1/4
-    K: C
-    Q: 1/4=60
-    | g e c d | g2 z2 |
+X: 3
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| e c a d | e2 z2 |
+
+X: 4
+T: callback
+C: uncommonhax
+M: 1/4
+L: 1/4
+K: C
+Q: 1/4=120
+| g e c f | g2 z2 |
+
 
 / / V A P O R W A V E / /
 if VAPOR || WAVE || WAV || VAPORWAVE 
