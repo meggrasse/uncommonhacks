@@ -3,15 +3,12 @@ from  werkzeug.debug import get_current_traceback
 from app import app
 from sentiment import *
 from .forms import *
+from secret import *
 import twilio.twiml
 from twilio.rest import TwilioRestClient
 from collections import deque
 
-ACCOUNT_SID = "AC01fe30b094e3251e3f48f0acb4853310"
-AUTH_TOKEN = "47c5f4501af1693a8ecfdcd887aa2632"
-payload = ''
-
-client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+client = TwilioRestClient(account_sid, auth_token)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
