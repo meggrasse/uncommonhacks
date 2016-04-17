@@ -98,7 +98,7 @@
     G,,-(3:2:2G,,G,/ (3:2:2D,B,,/ | G,,4 |
 
  // conversion example from roman numeral to ABC //
-    I ii iii IV --> 
+    I vi IV V I2 --> 
 
     X: 1 
     T: callback
@@ -107,7 +107,7 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | C D E F | G2 z2 |
+    | C A F G | C2 z2 |
 
     X: 2
     T: callback
@@ -116,7 +116,7 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | e f g a | b2 z2 |
+    | e c a b | e2 z2 |
 
     X: 3
     T: callback
@@ -125,7 +125,7 @@
     L: 1/4
     K: C
     Q: 1/4=60
-    | g a b c | d2 z2 |
+    | g e c d | g2 z2 |
 
 / / V A P O R W A V E / /
 if VAPOR || WAVE || WAV || VAPORWAVE 
